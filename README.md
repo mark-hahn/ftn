@@ -1,11 +1,11 @@
-# Feeton
+# FTN
 Advanced replacement for CouchDB's Futon admin utility.
 
-The Feeton github project can be found [here](https://github.com/mark-hahn/Feeton).
+The FTN github project can be found [here](https://github.com/mark-hahn/ftn).
 
 ## Status:
 
-Feeton is currently in design (pre-alpha) and should be ready to try out by the end of the year (2012) at the latest.
+FTN is currently in design (pre-alpha) and should be ready to try out by the end of the year (2012) at the latest.
 
 ## Features
  
@@ -24,16 +24,12 @@ Feeton is currently in design (pre-alpha) and should be ready to try out by the 
  
 ## Installation:
 
-Feeton is a CouchDB app.  To install Feeton just copy the feeton.db file into your CouchDB's DB folder and access it with http://your-domain.com:5984/feeton/app/index.html.
+FTN is a CouchDB app.  To install FTN just copy the ftn.db file into your CouchDB's DB folder and access it with http://your-domain.com:5984/ftn/app/index.html.
 
-## Feeton Technology
+## FTN Technology
 
-Feeton is a CouchDB/BackBone app written in CoffeeScript and built with Kanso.
-
-## Feeton Test Site
-
-A development environment and public test site will be available soon thanks to site hosting contributed by [WebFaction](http://www.webfaction.com).  
+FTN is a CouchDB/BackBone app written in CoffeeScript and built with Kanso.
 
 ## License
 
-Standard MIT license.  See the `FEETON-LICENSE` file.
+Standard MIT license.  See the `LICENSE` file.
