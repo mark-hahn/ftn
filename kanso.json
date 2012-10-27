@@ -1,0 +1,28 @@
+{
+    "name": "feeton",
+    "version": "0.0.1",
+    "description": "Replacement for CouchDB's Futon utility",
+    "attachments": ["lib/index.html"],
+	"modules": ["lib"],
+	"load": "lib/app",  
+    "dependencies": {
+        "attachments": 					null,  
+		"backbone": 					null,
+		"backbone-adapter": 			null,
+		"coffee-script-precompiler": 	null,
+		"cookies": 						null,
+		"db": 							null,
+		"events": 						null,
+		"jquery": 						null,
+		"modules": 						null,
+		"path": 						null,
+		"properties":					null,
+		"querystring":					null,
+		"underscore":					null,
+		"underscore-string":			null,
+		"url":							null
+    },
+	"coffee-script": {
+	    "modules": ["lib"]
+	}
+}

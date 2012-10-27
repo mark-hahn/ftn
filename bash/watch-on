@@ -1,0 +1,11 @@
+ 
+echo "Killing old watch" 
+killall  /opt/vagrant_ruby/bin/ruby
+
+echo "Starting kanso.watchr"
+cd /feeton
+watchr kanso.watchr &
+
+echo "Starting lib.watchr"
+cd /feeton/lib
+watchr lib.watchr &
