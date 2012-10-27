@@ -8,6 +8,6 @@ exports.views =
 exports.rewrites = [
 	"from": 	"/"
 	"to": 		"lib/index.html"
-	"method": 	"GET"
+	"method": 	"*"
 	"query": 	{}
 ]

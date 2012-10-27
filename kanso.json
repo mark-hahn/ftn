@@ -1,5 +1,5 @@
 {
-    "name": "feeton",
+    "name": "ftn",
     "version": "0.0.1",
     "description": "Replacement for CouchDB's Futon utility",
     "attachments": ["lib/index.html"],
