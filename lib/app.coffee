@@ -3,7 +3,7 @@ exports.views =
         map: (doc) ->
             emit doc.make, null
 
-# http://localhost:5984/feeton/_design/feeton/_rewrite
+# http://localhost:5984/ftn/_design/ftn/_rewrite
 
 exports.rewrites = [
 	"from": 	"/"

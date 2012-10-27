@@ -1,10 +1,10 @@
 ###
-	feeton main.js 
+	ftn main.js 
 	this loads and runs the entire app
 ### 
 
-console.log 'feeton main started'
+console.log 'ftn main started'
 
 db = require 'db'
 
-console.log 'feeton main finished'
+console.log 'ftn main finished'
