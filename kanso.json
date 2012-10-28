@@ -12,6 +12,7 @@
 		"coffee-script-precompiler": 	null,
 		"cookies": 						null,
 		"db": 							null,
+		"drykup": 						null,
 		"events": 						null,
 		"jquery": 						null,
 		"modules": 						null,

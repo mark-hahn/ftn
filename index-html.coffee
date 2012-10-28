@@ -8,7 +8,8 @@ console.log '**** index.html compiling'
 
 fs = require 'fs'
 
-{doctype,html,head,meta,title,script,body,div} = dk = require('drykup') expand: yes
+{doctype,html,head,meta,title,script,body,div} = 
+		dk = require('./packages/drykup/drykup') expand: yes
 
 doctype 5 
 html ->  
