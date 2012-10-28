@@ -5,6 +5,11 @@
 
 console.log 'ftn main started'
 
-db = require 'db'
+db 		 = require 'db'
+Backbone = require 'backbone'
+adapter  = require 'backbone-adapter'
+
+Backbone.db   = '/';
+Backbone.sync = adapter.sync;
 
 console.log 'ftn main finished'
