@@ -1,1 +1,1 @@
-watch('.*') { system('cd /ftn && kanso push') } 
+watch('.*') { system('cd .. && kanso push') } 
