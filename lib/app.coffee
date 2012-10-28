@@ -1,11 +1,7 @@
-exports.views =
-    makes:
-        map: (doc) ->
-            emit doc.make, null
-
-# http://localhost:5984/ftn/_design/ftn/_rewrite
-# http://ftn:5984/ftn?u=http://localhost:5984
-# http://ftn:5984/lib/modules.js
+#exports.views =
+#    makes:
+#        map: (doc) ->
+#            emit doc.make, null
 
 exports.rewrites = [
 	from: 	"/ftn/_design/ftn/*"
