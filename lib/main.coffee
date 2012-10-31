@@ -3,13 +3,16 @@
 	this loads and runs the entire app
 ### 
 
-console.log 'ftn main started'
-
 db 		 = require 'db'
 Backbone = require 'backbone'
 adapter  = require 'backbone-adapter'
+$ 		 = require 'jquery'
+
+require 'jsoneditor/jsoneditor'
 
 Backbone.db   = '/';
 Backbone.sync = adapter.sync;
 
-console.log 'ftn main finished'
+$ ->
+	editor = new JSONEditor $('#jsoneditor')[0]
+
