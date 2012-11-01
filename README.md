@@ -24,10 +24,7 @@ FTN is currently in design (pre-alpha) and should be ready to try out by the end
  
 ## Installation
 
-FTN is a CouchDB app. To install FTN ...
-
-- Download the `ftn.couch` db file from this repo into your CouchDB's db folder
-- Add a `vhosts` section to your db config with a key of `yourDbDomain:5984` and value of `/ftn/_design/ftn/_rewrite`.  Note that `yourDbDomain` should be your db host domain such as `ftn.org`
+FTN is a CouchDB app. To install FTN just download the `ftn.couch` db file from this repo into your CouchDB's db folder.  Then it can be accessed at http://domain:5984/ftn/_design/ftn/_rewrite.  (See usage section for explanation of why rewrite cannot be used).
 
 ## Usage
 
@@ -35,7 +32,7 @@ Unfortunately ftn currently requires a long url to access an arbitrary couch db 
 
     http://domain:5984/ftn/_design/ftn/_rewrite/?u=http://domain:5984/db/id
 
-I am investigating how to use a vhost and rewrite to get a short url, but so far it seems impossible since the ajax calls from ftn would not be able to access another db.
+I am investigating how to use a vhost and rewrite to get a short url, but so far it seems impossible since the ajax calls from ftn would not be able to access a different db than ftn.
 
 ## FTN Technology
 
