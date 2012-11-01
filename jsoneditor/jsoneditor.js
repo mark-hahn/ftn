@@ -57,8 +57,7 @@ if (!Array.prototype.forEach) {
 }
 
 // define variable JSON, needed for correct error handling on IE7 and older
-// mch
-//var JSON;
+// var JSON;
 
 /**
  * JSONEditor
@@ -68,9 +67,7 @@ if (!Array.prototype.forEach) {
  *                                   {Boolean} enableHistory  true by default
  * @param {Object | undefined} json JSON object
  */
- 
-// mch
-window.JSONEditor = JSONEditor = function (container, options, json) {
+JSONEditor = function (container, options, json) {
     // check availability of JSON parser (not available in IE7 and older)
     if (!JSON) {
         throw new Error ('Your browser does not support JSON. \n\n' +
@@ -3748,7 +3745,7 @@ JSONEditor.parse = function (jsonString) {
  */
 JSONEditor.validate = function (jsonString) {
     var message = undefined;
-
+ 
     try {
         if (window.jsonlint) {
             window.jsonlint.parse(jsonString);
@@ -3770,3 +3767,5 @@ JSONEditor.validate = function (jsonString) {
     return message;
 };
 
+if (module && module.exports) 
+	module.exports = JSONEditor; 

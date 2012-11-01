@@ -1,7 +1,9 @@
 ###
-    http://ftn:5984/?u=http://127.0.0.1:5984/ftn
-###
+http://ftn:5984/ftn/_design/ftn/_rewrite/?u=http://ftn:5984/wiki
     
+http://ftn:5984/ftn/_design/ftn/_rewrite/?u=http://ftn:5984/wiki/455b0608d708244c51de1ef6ccc24e65
+###
+
 url = require 'url'
 
 class FtnURL

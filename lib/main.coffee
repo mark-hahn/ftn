@@ -3,24 +3,24 @@
 	this loads and runs the entire app
 ### 
 
-db 		 = require 'db'
-adapter  = require 'backbone-adapter'
-$ 		 = require 'jquery'
+$ 		   = require 'jquery'
+db 		   = require 'db'
+adapter    = require 'backbone-adapter'
+JSONEditor = require 'jsoneditor/jsoneditor'
 
 Backbone = require 'backbone'
-Backbone.db   = '/';
-Backbone.sync = adapter.sync;
+Backbone.db   	= '/';
+Backbone.sync 	= adapter.sync;
 
-require 'jsoneditor/jsoneditor'
 ftnUrl = require 'lib/ftn_url'
 
 $ ->
 	editor = new JSONEditor $('#jsoneditor')[0]
 	
 	$.getJSON ftnUrl.url, (doc, status) ->
-		console.log status, doc
-		
 		return if not status is 'success' 
 		
 		editor.set doc
+		
+		
 		
