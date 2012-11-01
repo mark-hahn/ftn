@@ -31,9 +31,11 @@ FTN is a CouchDB app. To install FTN ...
 
 ## Usage
 
-Accessing your db using the domain set in your db config vhost setting will automatically perform the db request, load the request url into the FTN url builder, and show the results of the request in FTN. For example, if your db host domain was `ftn.org` then the url `http://ftn.org:5984/dbname` would perform the db info request through FTN.
+Unfortunately ftn currently requires a long url to access an arbitrary couch db url.  For example, if you want to see a document with an id of `id` in db `db` then you would need to use this url ...
 
-If you use any other domain, such as localhost, then the request will be served as usual without FTN.  If you wish to use your normal db host domain for regular non-FTN requests, then you will need to put another domain name in your vhost setting.  One good way of doing this is to add an entry to your development computer's `hosts` file that points the domain `ftn` (just three letters) to the ip of your db host.  Then you can use the short `http://ftn:5984` to access FTN.
+    http://domain:5984/ftn/_design/ftn/_rewrite/?u=http://domain:5984/db/id
+
+I am investigating how to use a vhost and rewrite to get a short url, but so far it seems impossible since the ajax calls from ftn would not be able to access another db.
 
 ## FTN Technology
 
