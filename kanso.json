@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Replacement for CouchDB's Futon utility",
     "attachments": [
-    	"index.html", 
+    	"idx.htm", 
     	"jsoneditor/img/jsoneditor-icons.png",
 		"jsoneditor/jsoneditor.css"
 	],

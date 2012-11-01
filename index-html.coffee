@@ -1,8 +1,8 @@
 ###  
-	index-html.coffee: creates the index.html file
+	index-html.coffee: creates the idx.htm file
 ###
 
-console.log '**** index.html compiling'
+console.log '**** idx.htm compiling'
 
 fs   = require 'fs'
 exec = require('child_process').exec
@@ -30,10 +30,10 @@ html ->
 				
 		div x:"i=jsoneditor w:100% h:400"	
 		
-fs.writeFileSync 'index.html', dk.htmlOut
+fs.writeFileSync 'idx.htm', dk.htmlOut
 
 exec 'kanso push', (err, stdout, stderr) -> 
 	console.log _.trim stdout
 	if err or stderr then console.log "ERROR: kanso push exec " + err + '\n' + stderr
 
-console.log '**** index.html compiled'
+console.log '**** idx.htm compiled'

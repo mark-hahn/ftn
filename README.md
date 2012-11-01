@@ -33,6 +33,12 @@ The app can be run by going to `http://domain:5984/ftn/_design/ftn/_rewrite`. Un
 You can also directly access an arbitrary couch db url and show it in ftn.  For example, if you want to see a document with an id of `id` in db `db` then you would use this url ...
 
     http://domain:5984/ftn/_design/ftn/_rewrite/?u=http://domain:5984/db/id
+    
+## Try It Out
+
+I have a version of ftn running on iriscouch.  There is the ftn db and a sample db of wikipedia entries.  Try it [here](https://mark-hahn.iriscouch.com:6984/ftn/_design/ftn/idx.htm?u=https://mark-hahn.iriscouch.com:6984/wiki/455b0608d708244c51de1ef6ccc24e65).
+
+At the time of this writing ftn justs accesses the db and displays it in a json editor.  There is no other functionality.
 
 ## FTN Technology
 
