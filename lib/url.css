@@ -1,0 +1,9 @@
+
+{div,img,form,input} = dk = window.drykup  expand: yes
+
+exports.styles = ->
+	dk.style "
+		.round5  {-moz-border-radius:5  border-radius:5 }
+	"
+	
+

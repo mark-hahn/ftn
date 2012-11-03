@@ -11,9 +11,9 @@
 #	to: 	"jsoneditor/*"
 #,
 #	from: 	"/*"
-#	to: 	"idx.htm"
+#	to: 	"index.html"
 #,
 #	from: 	""
-#	to: 	"idx.htm"
+#	to: 	"index.html"
 #]
 

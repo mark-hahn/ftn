@@ -1,1 +1,1 @@
-watch('.*') { system('cd .. && kanso push') } 
+watch('.coffee') {system('kanso push ..')} 

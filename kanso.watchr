@@ -1,1 +1,1 @@
-watch('.*') { system('coffee index-html') }
+watch('.json') { system('kanso push') }

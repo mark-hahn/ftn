@@ -1,10 +1,22 @@
 
 echo "Killing old watch" 
-killall  /opt/vagrant_ruby/bin/ruby
+kill `pgrep watchr`
 
-echo "Starting kanso.watchr"
-watchr kanso.watchr &
+cd ..
+echo "Starting css.watchr"
+cd css
+watchr css.watchr &
 
+cd ..
+echo "Starting html.watchr"
+cd html
+watchr html.watchr &
+
+cd ..
 echo "Starting lib.watchr"
 cd lib
 watchr lib.watchr &
+
+cd ..
+echo "Starting kanso.watchr"
+watchr kanso.watchr &
