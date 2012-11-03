@@ -11,7 +11,7 @@ console.log '**** compiling index_css'
 style "
 	body 			{m:0 p:0 b:none ff:helvetica,arial,sans-serif fs:13}
 	
-	#indexHdr  		{c:b f:l w:100% h:23 bc:#ff6}
+	#indexHdr  		{c:b f:l w:100% h:23 bc:#ffa}
 	#indexLogo 		{c:b f:l p:r l:10 t:-2 p:4 w:90 h:20 fs:15 fw:b}
 	#indexCompiled 	{f:l ml:20 h:20 p:4 fs:12}
 	

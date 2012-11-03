@@ -26,11 +26,11 @@ style "
 	.opacity70  {opacity:0.7 filter:alpha(opacity=70)}
 	.opacity90  {opacity:0.9 filter:alpha(opacity=90)}
 	
-	#tabRow 	{c:b f:l w:100% h:25 bc:#faa fs:14}
-	.urlTab 	{f:l ml:7 mt:4 p:2 o:h h:20 fw:b bc:#fcc b:1pxsg c:p
+	#tabRow 	{c:b f:l w:100% h:25 bc:#fbb fs:14}
+	.urlTab 	{f:l ml:7 mt:4 p:2 o:h h:20 fw:b bc:#f99 b:1pxsg c:p
 	 			 		moz-border-radius:5 border-radius:5}
-	.selTab  	{bc:#fcc}
-	#tabBody 	{c:b f:l w:100% h:60 bc:#fcc fs:13}
+	.selTab  	{bc:#fdd}
+	#tabBody 	{c:b f:l w:100% h:120 p:5 bc:#fdd fs:13}
 
 "
 

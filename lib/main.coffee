@@ -28,31 +28,39 @@ routesForDisplay = _.clone routes
 routesForDisplay.reverse()
 
 $ -> 
-	$tabRow = $ '#tabRow'
-	
 	for route in routesForDisplay
 		[type, label, ptrn, keys...] = route
 		if label
 			dk.htmlOut = ''
 			div x:"c=urlTab", label
-			$tabRow.append dk.htmlOut
+			$('#tabRow').append dk.htmlOut
 
 	editor = new JSONEditor $('#jsoneditor')[0]
 	
 	
-	UrlModel = _.clone Backbone.Model
-	urlModel = new UrlModel
+	UrlModel = Backbone.Model.extend {}
+	urlModel = new UrlModel()
 	
-	TabsView = _.clone Backbone.View
-	tabsView = new TabsView
-		el: $tabRow[0]
+	TabsView = Backbone.View.extend
+		initialize: ->
+			@model.on 'change', =>
+				@render()
 		
-		model: urlModel
 		render: ->
-			$('.urlTab', $tabRow)
+			$('.urlTab', @$el)
 				.removeClass 'selTab'
-			$('.urlTab:contains("' + @.model.get('label') + '")', $tabRow)
+			$('.urlTab:contains("' + @.model.get('label') + '")', @$el)
 				.addClass 'selTab'
+				
+			bodyTxt = ''
+			for key in @.model.get 'keys'
+				bodyTxt += key + ': ' + @.model.get(key) + '<br>\n'
+				
+			$('#tabBody').html bodyTxt
+
+	tabsView = new TabsView
+		el: $('#tabRow')[0]
+		model: urlModel
 		
 		
 #	$.getJSON '/' + path, (doc, status) ->
@@ -71,7 +79,7 @@ $ ->
 	urlChange = (parts...) ->
 		[type, label, ptrn, keys...] = @
 
-		console.log '--- URL Change: ', type, parts
+		console.log '--- URL: ', type, parts
 		
 		attrs = {type, label, ptrn, keys}
 		for key, i in keys then attrs[key] = parts[i]
@@ -83,7 +91,12 @@ $ ->
 		initialize: ->
 			for route in routes
 				[type, label, ptrn] = route
+				
+				regEx = new RegExp  '^' + ptrn.replace(/\*/g, '([^/]*)') + '$'
+				console.log regEx
+				
 				path = ftnPath + '?u=/' + ptrn.replace /\*/g, ':x'
+				console.log path
 				@route path, 'n', _.bind urlChange, route
 			null
 	
