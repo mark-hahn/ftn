@@ -15,20 +15,17 @@ _		   = require 'underscore'
 ftnPath = 'ftn/_design/ftn/index.html'
 
 routes = [
-	['favicon', '', 'asdf']
-	
-	['view',    'View', 	'*/_design/*/_view/*', 	'db', 'design', 'view'	]
-	['des',     'Design', 	'*/_design/*', 			'db', 'design'			]
-	['attach',  'Attach', 	'*/*/*', 				'db', 'doc', 'attach'	]
-	['doc',     'Doc', 		'*/*', 					'db', 'doc'				]
+#	['favicon', '', 'asdf']
+#	
 	['db',      'DB', 		'*', 					'db']
+	['doc',     'Doc', 		'*/*', 					'db', 'doc'				]
+	['attach',  'Attach', 	'*/*/*', 				'db', 'doc', 'attach'	]
+	['des',     'Design', 	'*/_design/*', 			'db', 'design'			]
+	['view',    'View', 	'*/_design/*/_view/*', 	'db', 'design', 'view'	]
 ]
 
-routesForDisplay = _.clone routes
-routesForDisplay.reverse()
-
 $ -> 
-	for route in routesForDisplay
+	for route in routes
 		[type, label, ptrn, keys...] = route
 		if label
 			dk.htmlOut = ''
@@ -55,34 +52,45 @@ $ ->
 			bodyTxt = ''
 			for key in @.model.get 'keys'
 				bodyTxt += key + ': ' + @.model.get(key) + '<br>\n'
+			query = @.model.get('query')
+			if query then bodyTxt += 'query: ' + query
 				
 			$('#tabBody').html bodyTxt
 
 	tabsView = new TabsView
 		el: $('#tabRow')[0]
 		model: urlModel
-		
-		
-#	$.getJSON '/' + path, (doc, status) ->
-#		return if not status is 'success' 
-#		console.log 'getJSON: ', doc
-#		editor.set doc
-
 	
 	
 	buildUrl = (attrs) ->
-		{ptrn: path, keys} = attrs
+		{ptrn: path, keys, query} = attrs
+		
 		for key in keys then path = path.replace /\*/, attrs[key]
+		if query
+			qarr = []; for key, val of query then qarr.push key + '=' + val
+			path += '?' + qarr.join '&'
+		
+		$.getJSON '/' + path, (doc, status) ->
+			return if not status is 'success' 
+			editor.set doc
+	
 		urlModel.set attrs
 		
-	
+		
 	urlChange = (parts...) ->
 		[type, label, ptrn, keys...] = @
-
+		
 		console.log '--- URL: ', type, parts
 		
 		attrs = {type, label, ptrn, keys}
+		
 		for key, i in keys then attrs[key] = parts[i]
+		
+		if (queries = parts[-1..-1][0]?.split '&')
+			attrs.query = {}
+			for query in queries
+				[key, val] = query.split '='
+				if key then attrs.query[key] = val ? 'true'
 		
 		buildUrl attrs
 		
@@ -92,12 +100,10 @@ $ ->
 			for route in routes
 				[type, label, ptrn] = route
 				
-				regEx = new RegExp  '^' + ptrn.replace(/\*/g, '([^/]*)') + '$'
-				console.log regEx
+				regEx = new RegExp '^' + ftnPath + '\\?u=/' + 
+						ptrn.replace(/\*/g, '([^/\?#]*)') + '/?(\\?([^#]*))?$'
+				@route regEx, 'n', _.bind urlChange, route
 				
-				path = ftnPath + '?u=/' + ptrn.replace /\*/g, ':x'
-				console.log path
-				@route path, 'n', _.bind urlChange, route
 			null
 	
 	urlRouter = new UrlRouter()
