@@ -31,8 +31,9 @@ html ->
 			div {x:"i=indexCompiled"}, 
 				'(Compiled ' + (new Date().toLocaleString()[0..20]) + ')'
 		
-		div x:"i=tabRow"
-		div x:"i=tabBody"
+		div x:"i=urlTabs", ->
+			div x:"i=urlTabRow"
+			div x:"i=urlPanes"
 		
 		div x:"i=jsoneditor"	
 

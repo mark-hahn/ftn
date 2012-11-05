@@ -30,7 +30,7 @@ style "
 	.urlTab 	{f:l ml:7 mt:4 p:2 o:h h:20 fw:b bc:#f99 b:1pxsg c:p
 	 			 		moz-border-radius:5 border-radius:5}
 	.selTab  	{bc:#fdd}
-	#tabBody 	{c:b f:l w:100% h:120 p:5 bc:#fdd fs:13}
+	#tabBody 	{c:b f:l w:100% p:5 bc:#fdd fs:14 fw:b}
 
 "
 
