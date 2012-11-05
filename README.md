@@ -24,21 +24,21 @@ FTN is currently in design (pre-alpha) and should be ready to try out by the end
  
 ## Installation
 
-FTN is a CouchDB app. To install FTN just download the `ftn.couch` db file from the ftn github download page into your CouchDB's db folder.
+FTN is a CouchDB app. To install FTN just download the `ftn.couch` db file from the FTN github download page into your CouchDB's db folder.
 
 ## Usage
 
 The app can be run by going to `http://domain:5984/ftn/_design/ftn/index.html`.
 
-You can also directly access an arbitrary couch db url and show it in ftn.  For example, if you want to see a document with an id of `id` in db `db` then you would use this url ...
+You can also directly access an arbitrary couch db url and show it in FTN.  For example, if you want to see a document with an id of `id` in db `db` then you would use this url ...
 
     http://domain:5984/ftn/_design/ftn/index.html?u=/db/id
     
 ## Try It Out
 
-I have a version of ftn running on iriscouch.  There is the ftn db and a sample db of wikipedia entries.  Try it [here](https://mark-hahn.iriscouch.com:6984/ftn/_design/ftn/index.html?u=/wiki/455b0608d708244c51de1ef6ccc24e65).
+There is a version of FTN running on iriscouch.  There is the FTN db and a sample db of wikipedia entries.  Try it [here](https://mark-hahn.iriscouch.com:6984/ftn/_design/ftn/index.html?u=/wiki/455b0608d708244c51de1ef6ccc24e65).  To see the wikipedia text click on the expand-all icon in the editor and scroll to the bottom.
 
-At the time of this writing ftn justs accesses the db and displays it in a json editor.  There is no other functionality.
+At the time of this writing FTN only accesses the db and displays it in a json editor.
 
 ## FTN Technology
 
