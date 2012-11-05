@@ -2,7 +2,7 @@
 	index-html.coffee: creates the index.html file
 ###
 
-#console.log '**** index_html compiling'
+console.log '**** index_html compiling'
 
 fs   = require 'fs'
 exec = require('child_process').exec
@@ -12,7 +12,7 @@ _	 = require '../packages/underscore-string/underscore-string'
 		dk = require('../packages/drykup/drykup') expand: yes
  
 doctype 5 
-html ->
+html -> 
 	head ->
 		meta "http-equiv": "Content-Type", content:"text/html; charset=UTF-8"
 		title "FTN"
@@ -29,7 +29,7 @@ html ->
 		div x:"i=indexHdr", ->
 			div x:"i=indexLogo", 'FTN'
 			div {x:"i=indexCompiled"}, 
-				'(Compiled ' + (new Date().toLocaleString()[0..20]) + ')'
+				'(Compiled ' + (new Date().toLocaleString()[0..20]) + ' pacific)'
 		
 		div x:"i=urlTabs", ->
 			div x:"i=urlTabRow"
@@ -42,4 +42,4 @@ exec 'kanso push ..', (err, stdout, stderr) ->
 	#console.log _.trim stdout
 	if err or stderr then #console.log "ERROR: kanso push exec " + err + '\n' + stderr
 	
-#console.log '**** index_html compiled'
+console.log '**** index_html compiled'
