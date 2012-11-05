@@ -2,7 +2,7 @@
 	index-html.coffee: creates the index.html file
 ###
 
-console.log '**** index_html compiling'
+#console.log '**** index_html compiling'
 
 fs   = require 'fs'
 exec = require('child_process').exec
@@ -39,7 +39,7 @@ html ->
 
 fs.writeFileSync '../index.html', dk.htmlOut
 exec 'kanso push ..', (err, stdout, stderr) -> 
-	console.log _.trim stdout
-	if err or stderr then console.log "ERROR: kanso push exec " + err + '\n' + stderr
+	#console.log _.trim stdout
+	if err or stderr then #console.log "ERROR: kanso push exec " + err + '\n' + stderr
 	
-console.log '**** index_html compiled'
+#console.log '**** index_html compiled'

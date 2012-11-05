@@ -5,7 +5,7 @@ _	 = require '../packages/underscore-string/underscore-string'
  
 {style} = dk = require('../packages/drykup/drykup') expand: yes
 
-console.log '**** compiling url_css'
+#console.log '**** compiling url_css'
 # ----------------------------------------------------------------------
 
 style "
@@ -26,11 +26,11 @@ style "
 	.opacity70  {opacity:0.7 filter:alpha(opacity=70)}
 	.opacity90  {opacity:0.9 filter:alpha(opacity=90)}
 	
-	#tabRow 	{c:b f:l w:100% h:25 bc:#fbb fs:14}
+	#urlTabRow 	{c:b f:l w:100% h:25 bc:#fbb fs:14}
 	.urlTab 	{f:l ml:7 mt:4 p:2 o:h h:20 fw:b bc:#f99 b:1pxsg c:p
 	 			 		moz-border-radius:5 border-radius:5}
 	.selTab  	{bc:#fdd}
-	#tabBody 	{c:b f:l w:100% p:5 bc:#fdd fs:14 fw:b}
+	#urlPanes 	{c:b f:l w:100% p:5 bc:#fdd fs:14 fw:b}
 
 "
 
@@ -39,7 +39,7 @@ fs.writeFileSync 'url.css',
 	dk.htmlOut.replace(/<\/?style>/g, '').replace(/\}/g, '}\n').replace /\t/g, ''
 
 exec 'kanso push ..', (err, stdout, stderr) -> 
-	console.log _.trim stdout
-	if err or stderr then console.log "ERROR: kanso push exec " + err + '\n' + stderr
+	#console.log _.trim stdout
+	if err or stderr then #console.log "ERROR: kanso push exec " + err + '\n' + stderr
 	
-console.log '**** url_css compiled'
+#console.log '**** url_css compiled'

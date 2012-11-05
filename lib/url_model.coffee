@@ -2,6 +2,8 @@
 	url_model.js 
 ###  
 
+log = require('lib/logger') 'url_model', dbg: 1
+
 $ 		   = require 'jquery'
 Backbone   = require 'backbone'
 _		   = require 'underscore'
@@ -9,7 +11,7 @@ _		   = require 'underscore'
 module.exports = Backbone.Model.extend
 
 	initialize: ({@globalEvents}) ->
-		console.log 'new UrlModel'
+		log 'initialize'
 	
 		@.on 'change', ->
 			{ptrn, keys, query} = attrs = @toJSON()
@@ -22,7 +24,7 @@ module.exports = Backbone.Model.extend
 				path += '?' + qarr.join '&'
 			@.set {path}, silent: yes
 			
-			console.log 'urlModel change path', path
+			log 'change path', path
 			
 		
 

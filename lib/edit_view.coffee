@@ -2,26 +2,40 @@
 	edit_view.js 
 ###  
 
+log = require('lib/logger') 'edit_view', dbg: 1
+
 $ 		   = require 'jquery'
 Backbone   = require 'backbone'
 _		   = require 'underscore'
 
 {div} = dk = require('drykup') expand: yes
 
+basePath = /^(https?:\/\/[^\/]*\/)/.exec(location.href)?[1]
+
 module.exports = Backbone.View.extend
 
 	initialize: ({@globalEvents}) -> 
-		console.log 'new EditView'
+		log 'initialize'
 		
 		@jsonEditor = new JSONEditor @el
 		
-	render: ->
-		path = @model.get(path)
+		log '@jsonEditor', @jsonEditor
 		
-		$.getJSON path, (doc, status) ->
+		@model.on 'change', => @render()
+		
+	render: ->
+		log 'render'
+		
+		path = @model.get 'path'
+		
+		log 'render path ' + path
+		
+		$.getJSON basePath + path, (doc, status) =>
 			if status isnt 'success'
-				console.log 'edit_view getJSON err ' + status + ' ' + path
+				log 'err', 'render getJSON ' + status + ' ' + path
 				return
-				
+			
+			log 'render getJSON' + status + ' ' + path, doc
+			
 			@jsonEditor.set doc
 		

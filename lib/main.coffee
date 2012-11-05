@@ -15,20 +15,23 @@ UrlView    = require 'lib/url_view'
 EditView   = require 'lib/edit_view'
 UrlRouter  = require 'lib/url_router'
 
-globalEvents = _.clone Backbone.Events
-
-urlModel  = new UrlModel  {globalEvents}
-
-urlView   = new UrlView   {
-	globalEvents
-	model: urlModel
-	el: $('#urlTabs'   )[0]
-	routes: UrlRouter.prototype.routes
-}
-editView  = new EditView  {
-	globalEvents
-	model: urlModel
-	el: $('#jsoneditor')[0]
-}
-urlRouter = new UrlRouter {globalEvents, urlModel}
-
+$ ->
+	globalEvents = _.clone Backbone.Events
+	
+	urlModel  = new UrlModel  {globalEvents}
+	
+	urlView   = new UrlView   {
+		globalEvents
+		model: urlModel
+		el: $('#urlTabs')[0]
+		routes: UrlRouter.prototype.routes
+	}
+	
+	editView  = new EditView  {
+		globalEvents
+		model: urlModel
+		el: $('#jsoneditor')[0]
+	}
+	
+	urlRouter = new UrlRouter {globalEvents, urlModel}
+	

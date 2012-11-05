@@ -23,7 +23,7 @@ fs.writeFileSync 'index.css',
 	dk.htmlOut.replace(/<\/?style>/g, '').replace(/\}/g, '}\n').replace /\t/g, ''
 
 exec 'kanso push ..', (err, stdout, stderr) -> 
-	console.log _.trim stdout
-	if err or stderr then console.log "ERROR: kanso push exec " + err + '\n' + stderr
+	#console.log _.trim stdout
+	if err or stderr then #console.log "ERROR: kanso push exec " + err + '\n' + stderr
 	
-console.log '**** index_css compiled'
+#console.log '**** index_css compiled'
