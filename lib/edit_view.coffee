@@ -2,7 +2,7 @@
 	edit_view.js 
 ###  
 
-log = require('lib/logger') 'edit_view', dbg: 1
+log = require('lib/logger') 'edit_view', dbg: 0
 
 $ 		   = require 'jquery'
 Backbone   = require 'backbone'

@@ -2,7 +2,7 @@
 	url_model.js 
 ###  
 
-log = require('lib/logger') 'url_model', dbg: 1
+log = require('lib/logger') 'url_model', dbg: 0
 
 $ 		   = require 'jquery'
 Backbone   = require 'backbone'

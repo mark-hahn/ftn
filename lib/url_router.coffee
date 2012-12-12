@@ -14,8 +14,8 @@ module.exports = Backbone.Router.extend
 	routes: [
 		['root',    'Root', 	'']
 		['db',      'DB', 		'*', 					'db']
-		['doc',     'Doc', 		'*/*', 					'db', 'doc'				]
-		['attach',  'Attach', 	'*/*/*', 				'db', 'doc', 'attach'	]
+		['doc',     'Doc', 		'*/*', 					'db', 'id'				]
+		['attach',  'Attach', 	'*/*/*', 				'db', 'id', 'attach'	]
 		['des',     'Design', 	'*/_design/*', 			'db', 'design'			]
 		['view',    'View', 	'*/_design/*/_view/*', 	'db', 'design', 'view'	]
 	]	

@@ -1,4 +1,6 @@
 # FTN
+# This has been superceded by the more general [apihack](https://github.com/mark-hahn/apihack).
+
 Advanced replacement for CouchDB's Futon admin utility.
 
 The FTN github project can be found [here](https://github.com/mark-hahn/ftn).
@@ -8,7 +10,7 @@ The FTN github project can be found [here](https://github.com/mark-hahn/ftn).
 FTN is currently in design (pre-alpha) and should be ready to try out by the end of the year (2012) at the latest.
 
 ## Features
- 
+
 - Web-based like Futon
 - One-page responsive app
 - Tabbed interface with history
@@ -21,7 +23,7 @@ FTN is currently in design (pre-alpha) and should be ready to try out by the end
 - Live data updates using changes feed
 - Views with very large results supported without pagination
 - Cached in local browser-based indexedDB
- 
+
 ## Installation
 
 FTN is a CouchDB app. To install FTN just download the `ftn.couch` db file from the FTN github download page into your CouchDB's db folder.
@@ -33,7 +35,7 @@ The app can be run by going to `http://domain:5984/ftn/_design/ftn/index.html`.
 You can also directly access an arbitrary couch db url and show it in FTN.  For example, if you want to see a document with an id of `id` in db `db` then you would use this url ...
 
     http://domain:5984/ftn/_design/ftn/index.html?u=/db/id
-    
+
 ## Try It Out
 
 There is a version of FTN running on iriscouch.  There is the FTN db and a sample db of wikipedia entries.  Try it [here](https://mark-hahn.iriscouch.com:6984/ftn/_design/ftn/index.html?u=/wiki/455b0608d708244c51de1ef6ccc24e65).  To see the wikipedia text click on the expand-all icon in the editor and scroll to the bottom.
@@ -58,6 +60,10 @@ If you are such a wonderful person that you want to help out with FTN and compil
 - kanso push
 
 Pull requests are welcome.
+
+## Credits
+
+The excellent json editor is by Jos de Jong.  You can find it on [github](https://github.com/wjosdejong/jsoneditoronline).
 
 ## License
 

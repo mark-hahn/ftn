@@ -1,7 +1,7 @@
 ###
-	ftn main.js 
+	ftn main.js
 	this loads and runs the entire app
-###  
+###
 
 $ 		   = require 'jquery'
 db 		   = require 'db'
@@ -17,21 +17,23 @@ UrlRouter  = require 'lib/url_router'
 
 $ ->
 	globalEvents = _.clone Backbone.Events
-	
-	urlModel  = new UrlModel  {globalEvents}
-	
+
+	viewStackColl = Backbone.Collection.extend
+
+	viewStackColl.add (urlModel  = new UrlModel  {globalEvents})
+
 	urlView   = new UrlView   {
 		globalEvents
 		model: urlModel
 		el: $('#urlTabs')[0]
 		routes: UrlRouter.prototype.routes
 	}
-	
+
 	editView  = new EditView  {
 		globalEvents
 		model: urlModel
 		el: $('#jsoneditor')[0]
 	}
-	
+
 	urlRouter = new UrlRouter {globalEvents, urlModel}
-	
+
