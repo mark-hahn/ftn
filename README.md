@@ -1,5 +1,8 @@
-# FTN
-# This has been superceded by the more general [apihack](https://github.com/mark-hahn/apihack).
+
+# FTN is not under develoment at this time.
+
+FTN
+=========
 
 Advanced replacement for CouchDB's Futon admin utility.
 
